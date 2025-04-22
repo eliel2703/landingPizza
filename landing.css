@@ -130,10 +130,6 @@ p {
     transition: transform 0.3s;
 }
 
-.product-card:hover {
-    transform: translateY(-10px);
-}
-
 .product-img {
     height: 200px;
     width: 100%;
