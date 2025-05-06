@@ -62,17 +62,13 @@ section {
     margin-top: 0;
 }
 
-#secao2 {
+#secao2, #secao4 {
     background-color: #f9f5f0;
 }
 
 #secao3 {
     background-color: #c62828;
     color: white;
-}
-
-#secao4 {
-    background-color: #f9f5f0;
 }
 
 h1 {
@@ -130,6 +126,10 @@ p {
     transition: transform 0.3s;
 }
 
+.product-card:hover {
+    transform: translateY(-10px);
+}
+
 .product-img {
     height: 200px;
     width: 100%;
@@ -152,65 +152,204 @@ p {
     margin-bottom: 1rem;
 }
 
-.product-price {
-    font-size: 1.2rem;
-    color: #ef6c00;
-    font-weight: bold;
-    margin-bottom: 1rem;
-}
-
 .about-content {
     display: flex;
     align-items: center;
-    max-width: 1000px;
-    gap: 3rem;
+    gap: 4rem;
+    margin-bottom: 4rem;
+    width: 100%;
+    max-width: 1200px;
+    flex-wrap: wrap; 
 }
 
 .about-img {
-    width: 45%;
+    flex: 1;
+    min-width: 300px;
     border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    overflow: hidden;
+    max-height: 500px;
+}
+
+.about-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.about-img:hover img {
+    transform: scale(1.03);
 }
 
 .about-text {
-    width: 55%;
+    flex: 1;
+    min-width: 300px;
     text-align: left;
+    padding: 1rem;
+}
+
+.about-text p {
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.pizza-suggestion {
+    background: rgba(255, 255, 255, 0.15);
+    padding: 3rem;
+    border-radius: 15px;
+    width: 100%;
+    max-width: 800px;
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    margin-top: 3rem;
+}
+
+.pizza-suggestion h3 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: white;
+    text-align: center;
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+.pizza-suggestion h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: #ffcc80;
+}
+
+.suggestion-form {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.form-group label {
+    font-weight: 600;
+    color: white;
+    font-size: 1.1rem;
+}
+
+.form-group select,
+.form-group input,
+.form-group textarea {
+    padding: 15px;
+    border-radius: 8px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    font-size: 1rem;
+    background-color: rgba(255, 255, 255, 0.9);
+    transition: all 0.3s ease;
+}
+
+.form-group select:focus,
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #ef6c00;
+    box-shadow: 0 0 0 3px rgba(239, 108, 0, 0.3);
+}
+
+.form-group textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.ingredients-checkbox {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-top: 0.5rem;
+}
+
+.ingredients-checkbox label {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    font-weight: 400;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.ingredients-checkbox label:hover {
+    color: #ffcc80;
+}
+
+.ingredients-checkbox input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    accent-color: #ef6c00;
+    cursor: pointer;
 }
 
 .contact-container {
     display: flex;
     justify-content: center;
-    gap: 3rem;
-    max-width: 1000px;
     width: 100%;
+    max-width: 1200px;
+    margin-top: 2rem;
 }
 
 .contact-info {
     text-align: left;
-    width: 40%;
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 500px;
 }
 
-.contact-info i {
-    color: #ef6c00;
-    margin-right: 10px;
-    width: 20px;
+.contact-info h3 {
+    color: #c62828;
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+}
+
+.contact-info p {
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 1.1rem;
 }
 
 footer {
     background-color: #c62828;
     color: white;
-    text-align: center;
     padding: 2rem 0;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
 }
 
 .social-icons {
-    margin-bottom: 1rem;
+    display: flex;
+    gap: 1.5rem;
 }
 
 .social-icons a {
     color: white;
     font-size: 1.5rem;
-    margin: 0 10px;
     transition: color 0.3s;
 }
 
@@ -218,25 +357,66 @@ footer {
     color: #ffcc80;
 }
 
-@media (max-width: 768px) {
+footer p {
+    margin-bottom: 0;
+    font-size: 1rem;
+}
+
+@media (max-width: 992px) {
     .about-content {
         flex-direction: column;
+        gap: 2rem;
     }
     
-    .about-img, .about-text {
+    .about-img, 
+    .about-text {
         width: 100%;
+        flex: none;
     }
     
-    .product-card {
-        width: 100%;
+    .about-img {
+        max-height: 400px;
+    }
+}
+
+@media (max-width: 768px) {
+    nav ul li {
+        margin: 0 10px;
     }
     
+    section {
+        padding: 5rem 1.5rem;
+    }
+    
+    .pizza-suggestion {
+        padding: 2rem;
+    }
+    
+    .ingredients-checkbox {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 576px) {
     nav ul {
-        flex-direction: column;
-        align-items: center;
+        flex-wrap: wrap;
     }
     
     nav ul li {
-        margin: 10px 0;
+        margin: 5px 10px;
+    }
+    
+    .pizza-suggestion {
+        padding: 1.5rem;
+    }
+    
+    .form-group select,
+    .form-group input,
+    .form-group textarea {
+        padding: 12px;
+    }
+    
+    .suggestion-form .btn {
+        width: 100%;
     }
 }
